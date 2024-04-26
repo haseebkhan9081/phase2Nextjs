@@ -1,3 +1,4 @@
+export const fetchCache = 'force-no-store';
 // Import necessary modules
 import { NextResponse } from 'next/server';
 import { db } from '/lib/db';
