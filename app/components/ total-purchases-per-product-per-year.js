@@ -5,13 +5,11 @@ export const TotalPurchasePerProductPerYear = () => {
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        // Generate a timestamp to append to the URL
-        const timestamp = new Date().getTime();
-        
-        // Append the timestamp to the URL
-        const apiUrl = `/api/total-purchases-per-product-per-year?timestamp=${timestamp}`;
-        
-        axios.get(apiUrl)
+        axios.get("/api/total-purchases-per-product-per-year", {
+            headers: {
+                'Cache-Control': 'no-cache'
+            }
+        })
             .then((response) => {
                 setData(response.data);
             })
