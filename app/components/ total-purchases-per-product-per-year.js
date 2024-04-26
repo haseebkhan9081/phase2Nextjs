@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Tablerow } from './tablerow'
+ 
 import axios from 'axios'; 
-// productName
-// : 
-// "Ceramic Mug"
-// totalQuantity
-// : 
-// 3
-// totalRevenue
-// : 
-// 100
-// year
-
+ 
 export const TotalPurchasePerProductPerYear = () => {
     const [data,setData]=useState([]);
     useEffect(()=>{
@@ -34,11 +24,14 @@ export const TotalPurchasePerProductPerYear = () => {
     </tr>
      
      {data?.map((stats)=>(
-        <Tablerow
-        rowData={{ column1: stats.productName 
-             , column2: stats.year, column3:stats.totalQuantity
-             ,column4:stats.totalRevenue }}
-        />
+      <tr>
+      <td>{stats.productName}</td>
+      <td>{stats.year}</td>
+      <td>{stats.totalQuantity}</td>
+   
+      <td>{stats.totalRevenue}</td>
+    </tr>
+         
      ))}
      
   </table></div>

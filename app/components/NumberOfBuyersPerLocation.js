@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { TableRowForNumberOfBuyersPerLocation } from './TableRowForNumberOfBuyersPerLocation'
-
+ 
 export const NumberOfBuyersPerLocation = () => {
     const [data,setData]=useState([])
     useEffect(()=>{
@@ -24,10 +23,11 @@ axios.get("/api/numberOfBuyersPerLocation").then((response)=>{
     </tr>
      
       {data?.map((stat)=>(
-        <TableRowForNumberOfBuyersPerLocation
-        rowData={{column1:stat.location,column2:stat.numberOfBuyers
-}}
-        />
+         <tr>
+         <td>{stat.location}</td>
+         <td>{stat.numberOfBuyers}</td>
+       </tr>
+         
       ))}
      
   </table>
