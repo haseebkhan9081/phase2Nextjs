@@ -1,95 +1,62 @@
-import Image from "next/image";
+"use client"
 import styles from "./page.module.css";
+import { useEffect } from "react";
+import axios from "axios";
+import { TotalPurchasePerProductPerYear } from "./components/ total-purchases-per-product-per-year";
+import { NumberOfBuyersPerLocation } from "./components/NumberOfBuyersPerLocation";
+import { TheMostThreeProductsBoughtOverTheLastSixMonths } from "./components/TheMostThreeProductsBoughtOverTheLastSixMonths";
+import { TopThreebuyers } from "./components/TopThreebuyers";
+import { TopProductsbyTotalRevenueAllTime } from "./components/TopProductsbyTotalRevenueAllTime";
+import { TopSellers } from "./components/TopSellers";
 
 export default function Home() {
+
+  
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+     
+      <div style={{
+        width: "100%",
+        
+         
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <h1>E-commerce Statistics</h1>
+      <h1 style={{ 
+  backgroundPosition: 'center',
+  color: 'white',
+  textAlign: 'center',
+  marginBottom: '5px'
+}}><b>HANDMADE ENGINEER</b></h1>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+<div style={{
+       paddingBottom:'40px',
+      backgroundColor: '#F5F5DC',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
+      justifyContent: 'center',
+     
+    }}>
+{/*  Stats#1 total purchase per product per year */}
+<TotalPurchasePerProductPerYear/>
+{/*Stats#2 number of buyers per location  */}
+<NumberOfBuyersPerLocation/>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+{/* Stat#3 The Most 3 products bought over the last 6 months */}
+<TheMostThreeProductsBoughtOverTheLastSixMonths/>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+{/* Stat#4 The top 3 buyers of all time */}
+<TopThreebuyers/>
+{/* Stat#5 Top Products by Total Revenue All Time */}
+<TopProductsbyTotalRevenueAllTime/>
+{/* Stat#6 Top Sellers of All time */}
+<TopSellers/>
+</div >
+</div>
+    
+    
   );
 }
