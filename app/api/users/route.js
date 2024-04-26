@@ -14,3 +14,5 @@ return NextResponse.json(users||[]);
 }
 
  
+
+export const revalidate = 0;

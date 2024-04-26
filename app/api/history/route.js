@@ -20,3 +20,6 @@ export async function GET() {
         return new NextResponse('Error fetching purchase history', { status: 500 });
     }
 }
+
+
+export const revalidate = 0;

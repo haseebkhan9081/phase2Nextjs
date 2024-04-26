@@ -2,19 +2,7 @@ export const fetchCache = 'force-no-store';
 import { NextResponse } from "next/server";
 import { db } from "/lib/db.js";
 
-export async function GET() {
-    try {
-        
-        
-
-        // Return response with CORS headers
-        return new NextResponse("success", { status: 200});
-    } catch (error) {
-        console.log("api/init error", error);
-        return new NextResponse("Error while INITIALIZING DB", { status: 501 });
-    }
-}
-
+ 
 export async function POST(req) {
     try {
         // Enable CORS headers

@@ -17,3 +17,5 @@ export async function GET() {
         return new NextResponse('Error fetching product data', { status: 500 });
     }
 }
+
+export const revalidate = 0;

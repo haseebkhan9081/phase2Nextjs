@@ -40,3 +40,6 @@ export async function GET() {
         return new NextResponse("Error while retrieving data", { status: 501 });
     }
 }
+
+
+export const revalidate = 0;
