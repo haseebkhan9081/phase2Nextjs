@@ -1,5 +1,5 @@
-export const fetchCache = 'force-no-store';
 "use client"
+export const fetchCache = 'force-no-store';
 import { TotalPurchasePerProductPerYear } from "./components/ total-purchases-per-product-per-year";
 import { NumberOfBuyersPerLocation } from "./components/NumberOfBuyersPerLocation";
 import { TheMostThreeProductsBoughtOverTheLastSixMonths } from "./components/TheMostThreeProductsBoughtOverTheLastSixMonths";
