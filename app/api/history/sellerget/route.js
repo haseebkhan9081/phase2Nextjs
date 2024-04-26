@@ -8,9 +8,12 @@ export async function POST(req) {
         // Extract the seller ID from the request body
         const { id } = await req.json();
 
-        // Fetch the complete purchase history
+        // Fetch the complete purchase history ordered by date in descending order
         const history = await db.history.findMany({
-            take:20
+            take: 20,
+            orderBy: {
+                date: 'desc' // Order by date in descending order
+            }
         });
 
         // Fetch all products and customers
