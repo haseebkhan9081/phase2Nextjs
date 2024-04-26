@@ -1,7 +1,8 @@
+
 import { NextResponse } from "next/server";
 import { db } from "/lib/db.js"; 
 
-export async function GET(request) {
+export async function GET() {
     try {
         const historyData = await db.history.findMany({
             include: {
@@ -42,3 +43,5 @@ export async function GET(request) {
         return new NextResponse("Error while INITIALIZING DB", { status: 501 });
     }
 }
+
+export const revalidate = 0;
