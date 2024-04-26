@@ -1,7 +1,5 @@
+export const fetchCache = 'force-no-store';
 "use client"
-import styles from "./page.module.css";
-import { useEffect } from "react";
-import axios from "axios";
 import { TotalPurchasePerProductPerYear } from "./components/ total-purchases-per-product-per-year";
 import { NumberOfBuyersPerLocation } from "./components/NumberOfBuyersPerLocation";
 import { TheMostThreeProductsBoughtOverTheLastSixMonths } from "./components/TheMostThreeProductsBoughtOverTheLastSixMonths";
